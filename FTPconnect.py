@@ -15,7 +15,7 @@ class Connector:
 		
 	def copy(self, id:int):
 	# uploading file to the ftp server
-	# id - unique file identificator from config.json
+	# id - file identificator from config.json
 		for item in self.Files:
 			if(item["id"]) == id:
 				with open(item['path'], 'rb') as binfile:
