@@ -1,6 +1,6 @@
 import ftplib
 import json
-from FTPconnect import Connector
+from FTPconnect import Connector, CopyThread
 from threading import Thread
 
 
@@ -23,11 +23,14 @@ except ConnectionError:
 
 #Options
 def menu():
-
+	Threads = []
 	while(True):
 		option = input()
 		if(option=='q'):
 		#exit the program
+			
+			for thread in Threads:
+  				thread.join()
 			try:
 				conn.ftp.quit()
 			except ConnectionResetError as err:
@@ -40,10 +43,10 @@ def menu():
 		        except ValueError:
 		        	print('File id is a number')
 		        
-		        #Creating a thread for uploading the file
-		        upload = Thread(target = conn.copy , args = (File_id,) )
-		        upload.start()
-		        upload.join()
+		 
+		        cpThread = CopyThread(data,File_id)
+		        Threads.append(cpThread)
+		        cpThread.start()
 
 		if(option == 'ls'):
 		#list directory contents
