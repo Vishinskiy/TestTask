@@ -10,8 +10,8 @@
       "transfer_path": "test1.bin"
     },
     {
-      "path": "test2.txt",
-      "transfer_path": "test2.txt"
+      "path": "test2.bin",
+      "transfer_path": "test2.bin"
     },
     {
       "path": "test3.bin",
