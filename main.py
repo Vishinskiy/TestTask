@@ -17,7 +17,7 @@ conn = Connector(data)
 try:
         conn.connect()
         print(conn.conn_result)
-except ConnectionError:
+except Exception:
         print('Connection faled: check login/pass ')
         exit(2)
 
@@ -37,14 +37,10 @@ def menu():
 				print(err)
 			break
 		if(option[0:2] == 'cp'):
-		#uploading the file. Example: cp 1
-		        try:
-		                File_id = int(option[3:])
-		        except ValueError:
-		        	print('File id is a number')
-		        
-		 
-		        cpThread = CopyThread(data,File_id)
+		#uploading the file. Example: cp test1.bin
+
+		        FilePath = option[3:]
+		        cpThread = CopyThread(data,FilePath)
 		        Threads.append(cpThread)
 		        cpThread.start()
 

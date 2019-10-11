@@ -20,6 +20,7 @@ class Connector:
                 
 
 class  CopyThread(Thread):
+        
         def __init__(self, config:dict, fid):
                 self.Files = config['Files']
                 self.fid = fid
@@ -28,12 +29,14 @@ class  CopyThread(Thread):
                                                   config['entry_config']['password'])
                 Thread.__init__(self)
 
-        def copy(self, id:int):
+        def copy(self, path):
+        
                 for item in self.Files:
-                        if(item["id"]) == id:
+                        if(item["path"]) == path:
                                 with open(item['path'], 'rb') as binfile:
                                         self.ftp.storbinary('STOR ' + item['transfer_path'] , binfile, 1024)
                 self.ftp.quit()	
+        
         def run(self):
                 self.copy(self.fid)           
 		

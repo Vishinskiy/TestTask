@@ -6,19 +6,16 @@
   },
   "Files": [
     {
-      "id": 1,
       "path": "test1.bin",
       "transfer_path": "test1.bin"
     },
     {
-      "id": 2,
-      "path": "test2.bin",
-      "transfer_path": "test2.bin"
+      "path": "test2.txt",
+      "transfer_path": "test2.txt"
     },
     {
-      "id": 3,
       "path": "test3.bin",
-      "transfer_path": "test3.bin"
+      "transfer_path": "Hello/test3.bin"
     }
   ]
 }
