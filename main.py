@@ -39,8 +39,8 @@ def menu():
 		if(option[0:2] == 'cp'):
 		#uploading the file. Example: cp test1.bin
 
-		        FilePath = option[3:]
-		        cpThread = CopyThread(data,FilePath)
+		        File = option[3:]
+		        cpThread = CopyThread(data,File)
 		        Threads.append(cpThread)
 		        cpThread.start()
 

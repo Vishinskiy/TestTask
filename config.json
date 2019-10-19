@@ -4,18 +4,18 @@
     "username": "",
     "password": ""
   },
-  "Files": [
-    {
+  "Files": {
+    "file1" : {
       "path": "test1.bin",
       "transfer_path": "test1.bin"
     },
-    {
+    "file2" : {
       "path": "test2.txt",
       "transfer_path": "test2.txt"
     },
-    {
+    "file3": {
       "path": "test3.bin",
       "transfer_path": "Hello/test3.bin"
     }
-  ]
+  }
 }
